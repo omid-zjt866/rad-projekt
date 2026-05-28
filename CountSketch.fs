@@ -7,7 +7,7 @@ open RandomBytes
 
 
 let getSketch (stream: seq<uint64 * int>) (m: int) = 
-    // NOT the right hash functions !!!!!!
+    
     let h = fun x -> x % (uint64 m)
     let s = fun x -> 2*((int x) % 2) - 1
     let C : int64 [] = Array.zeroCreate m
@@ -59,14 +59,14 @@ let MakckCoutSkt (t: int)(g: uint64 -> bigint): (uint64 -> uint64) * (uint64 -> 
         1-2 * int topBit
     (h, s)
     
+// Opgave 6. 
 // t, som bestemmer størrelsen af arrayet.
-
 // h, som bestemmer hvilken counter vi bruger.
-
 // s, som bestemmer plus eller minus.
-
 // stream, som er en sekvens af par (x, d) 
-// Opgave 6. Vi bygge count-Sketch arrayet c ud fra streem
+//Vi bygge count-Sketch arrayet c ud fra streem
+
+
 let buildCountSketch (t: int) (h: uint64 -> uint64) (s: uint64 -> int) (stream: seq<uint64 * int>): bigint array= 
     if t < 0 || t > 30 then 
         invalidArg "t" "t should be between 0 and 30"

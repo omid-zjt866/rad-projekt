@@ -1,12 +1,14 @@
 #load "RandomBytes.fs"
 #load "HashFunctions.fs"
-#load "CountSketch.fs"
 #load "StreamGenerator.fs"
+#load "HashTable.fs"
+#load "CountSketch.fs"
 
 open RandomBytes
 open HashFunctions
-open CountSketch
 open StreamGenerator
+open HashTable
+open CountSketch
 
 printfn ""
 printfn "Opgave 4 test: fixed 4-universal g"
